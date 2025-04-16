@@ -37,14 +37,18 @@ namespace HelloWorldWinform
             Form aboutForm1 = new aboutForm(); 
             Form aboutForm2 = new aboutForm();
 
-            
             //모달(modal)창
             aboutForm1.Text = "모달창";
             aboutForm1.ShowDialog();
 
             //모달리스(modaless)창
-            aboutForm2.Text = "모달리스창";
-            aboutForm2.Show();
+            //aboutForm2.Text = "모달리스창";
+            //aboutForm2.Show();
+        }
+
+        private void btnpush_Click(object sender, EventArgs e)
+        {
+            label1.Text = "콰쾅";
         }
     }
 }

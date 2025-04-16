@@ -61,10 +61,11 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(364, 354);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(18, 12);
+            this.linkLabel1.Size = new System.Drawing.Size(291, 12);
             this.linkLabel1.TabIndex = 2;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "git";
+            this.linkLabel1.Text = "https://github.com/sarnet43/HelloWorldWinform.git";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // aboutForm
             // 

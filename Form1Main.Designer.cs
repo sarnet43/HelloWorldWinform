@@ -60,6 +60,7 @@
             this.btnpush.TabIndex = 1;
             this.btnpush.Text = "눌러주세요";
             this.btnpush.UseVisualStyleBackColor = false;
+            this.btnpush.Click += new System.EventHandler(this.btnpush_Click);
             // 
             // menuStrip1
             // 
@@ -98,7 +99,7 @@
             // 프로그램정보ToolStripMenuItem
             // 
             this.프로그램정보ToolStripMenuItem.Name = "프로그램정보ToolStripMenuItem";
-            this.프로그램정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.프로그램정보ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.프로그램정보ToolStripMenuItem.Text = "프로그램 정보";
             this.프로그램정보ToolStripMenuItem.Click += new System.EventHandler(this.프로그램정보ToolStripMenuItem_Click);
             // 
