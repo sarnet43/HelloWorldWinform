@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,35 @@ namespace HelloWorldWinform
         private void btnpush_Click(object sender, EventArgs e)
         {
             label1.Text = "콰쾅";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 열기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "텍스트문서(*.txt)|*.txt|csv 파일(*.csv)|*.csv|모든 파일(*.*)|*.*";
+            DialogResult result = openFileDialog.ShowDialog();
+
+            switch (result)
+            {
+                case DialogResult.Cancel:
+                    return;
+                    break;
+
+                case DialogResult.OK:
+                    using(StreamReader sr = new StreamReader(openFileDialog.FileName))
+                    {
+                        textBox1.Text = sr.ReadToEnd();
+                        sr.Close();
+                    }
+                    break;
+            }
+
+            
         }
     }
 }
