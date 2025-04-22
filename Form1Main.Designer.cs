@@ -47,6 +47,7 @@
             this.저장ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.다른이름으로저장ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.새로만들기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblTextChanged = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -175,7 +176,8 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.lblFileName});
+            this.lblFileName,
+            this.lblTextChanged});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 22);
@@ -219,6 +221,12 @@
             this.새로만들기ToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.새로만들기ToolStripMenuItem.Text = "새로 만들기";
             this.새로만들기ToolStripMenuItem.Click += new System.EventHandler(this.새로만들기ToolStripMenuItem_Click);
+            // 
+            // lblTextChanged
+            // 
+            this.lblTextChanged.Name = "lblTextChanged";
+            this.lblTextChanged.Size = new System.Drawing.Size(121, 17);
+            this.lblTextChanged.Text = "toolStripStatusLabel2";
             // 
             // Form1
             // 
@@ -269,6 +277,7 @@
         private System.Windows.Forms.ToolStripMenuItem 새로만들기ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 저장ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 다른이름으로저장ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel lblTextChanged;
     }
 }
 

@@ -13,9 +13,11 @@ namespace HelloWorldWinform
 {
     public partial class Form1 : Form
     {
+        private static string OriginalText;
         public Form1()
         {
             InitializeComponent();
+            OriginalText = textBox1.Text;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,7 +56,10 @@ namespace HelloWorldWinform
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBox1.Text != OriginalText){
+                lblTextChanged.Text = "⁂";
+            }
+            
         }
 
         private void 열기ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -73,6 +78,7 @@ namespace HelloWorldWinform
                     using (StreamReader sr = new StreamReader(openFileDialog.FileName))
                     {
                         textBox1.Text = sr.ReadToEnd();
+                        OriginalText = textBox1.Text;
                         sr.Close();
                     }
                     break;
@@ -85,6 +91,8 @@ namespace HelloWorldWinform
         private void 새로만들기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             lblFileName.Text = "제목없음";
+            OriginalText = textBox1.Text;
+            lblTextChanged.Text = "";
             textBox1.Text = "글자를 입력해주세요~";
         }
 
@@ -109,6 +117,8 @@ namespace HelloWorldWinform
             using (StreamWriter sr = new StreamWriter(lblFileName.Text))
             {
                 sr.Write(textBox1.Text);
+                OriginalText = textBox1.Text;
+                lblTextChanged.Text = "";
                 sr.Close();
             }
         }
@@ -135,6 +145,8 @@ namespace HelloWorldWinform
             using (StreamWriter sr = new StreamWriter(lblFileName.Text))
             {
                 sr.Write(textBox1.Text);
+                OriginalText = textBox1.Text;
+                lblTextChanged.Text = "";
                 sr.Close();
             }
         }
