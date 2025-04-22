@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HelloWorldWinform
 {
-    public partial class Form1: Form
+    public partial class Form1 : Form
     {
         public Form1()
         {
@@ -35,7 +35,7 @@ namespace HelloWorldWinform
 
         private void 프로그램정보ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form aboutForm1 = new aboutForm(); 
+            Form aboutForm1 = new aboutForm();
             Form aboutForm2 = new aboutForm();
 
             //모달(modal)창
@@ -60,7 +60,7 @@ namespace HelloWorldWinform
         private void 열기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "텍스트문서(*.txt)|*.txt|csv 파일(*.csv)|*.csv|모든 파일(*.*)|*.*";
+            openFileDialog.Filter = "텍스트 문서(*.txt)|*.txt|csv 파일(*.csv)|*.csv|모든 파일(*.*)|*.*";
             DialogResult result = openFileDialog.ShowDialog();
 
             switch (result)
@@ -68,17 +68,18 @@ namespace HelloWorldWinform
                 case DialogResult.Cancel:
                     return;
                     break;
-
                 case DialogResult.OK:
-                    using(StreamReader sr = new StreamReader(openFileDialog.FileName))
+                    lblFileName.Text = openFileDialog.FileName;
+                    using (StreamReader sr = new StreamReader(openFileDialog.FileName))
                     {
                         textBox1.Text = sr.ReadToEnd();
                         sr.Close();
                     }
                     break;
-            }
 
-            
+
+
+            }
         }
     }
 }
